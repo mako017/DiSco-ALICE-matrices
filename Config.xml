@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<widget xmlns   = "http://www.w3.org/ns/widgets"
+    xmlns:gap   = "http://phonegap.com/ns/1.0"
+    id          = "com.letstestit.matrizen"
+    versionCode = "10"
+    version     = "0.0.1" >
+
+<!-- versionCode is optional and Android only -->
+
+  <name>Matrizen</name>
+
+  <description>
+      Die Matrizenaufgabe als Schulvariante.
+  </description>
+
+  <author email="marco.koch@uni-saarland.de">
+      Marco Koch
+  </author>
+
+  <preference name="DisallowOverscroll" value="true"/>
+  <preference name="Fullscreen" value="true" />
+  <preference name="SuppressesLongPressGesture" value="true" />
+  <preference name="Orientation" value="landscape" />
+
+</widget>
