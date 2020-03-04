@@ -164,12 +164,14 @@ function loadItem(itemCode) {
 function openLock() {
     Participant.user = document.getElementById("lock-id").value;
     if (Participant.user.trim() === "download") {
+        console.log(cordova.file);
+        
         // download("download.csv",jtc2(getLocal()));
-        window.resolveLocalFileSystemURL(cordova.file.dataDirectory, function (dirEntry) {
-            console.log('file system open: ' + dirEntry.name);
-            var isAppend = true;
-            createFile(dirEntry, "fileToAppend.txt", isAppend);
-        }, onErrorLoadFs);
+        // window.resolveLocalFileSystemURL(cordova.file.dataDirectory, function (dirEntry) {
+        //     console.log('file system open: ' + dirEntry.name);
+        //     var isAppend = true;
+        //     createFile(dirEntry, "fileToAppend.txt", isAppend);
+        // }, onErrorLoadFs);
     }
     else if (Participant.user.trim() === "download2") {
         // download("download.csv",jtc2(getLocal()));
