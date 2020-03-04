@@ -173,11 +173,11 @@ function openLock() {
     }
     else if (Participant.user.trim() === "download2") {
         // download("download.csv",jtc2(getLocal()));
-        window.resolveLocalFileSystemURL(cordova.file.dataDirectory, function (cordova.file.dataDirectory) {
-            console.log('file system open: ' + cordova.file.dataDirectory.name);
-            var isAppend = true;
-            createFile(cordova.file.dataDirectory, "fileToAppend.txt", isAppend);
-        }, onErrorLoadFs);
+        // window.resolveLocalFileSystemURL(cordova.file.dataDirectory, function (cordova.file.dataDirectory) {
+        //     console.log('file system open: ' + cordova.file.dataDirectory.name);
+        //     var isAppend = true;
+        //     createFile(cordova.file.dataDirectory, "fileToAppend.txt", isAppend);
+        // }, onErrorLoadFs);
     }
     else{
         document.getElementById("lockscreen").classList.toggle("hidden");
