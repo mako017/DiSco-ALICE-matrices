@@ -21,6 +21,6 @@
   <preference name="Fullscreen" value="true" />
   <preference name="SuppressesLongPressGesture" value="true" />
   <preference name="Orientation" value="portrait" />
-  <plugin name="cordova-plugin-file" spec="~6.0.2" />
+  <plugin name="cordova-plugin-file" spec="3.0.0" source="pgb" />
 
 </widget>
