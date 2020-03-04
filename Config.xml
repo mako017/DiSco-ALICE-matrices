@@ -20,6 +20,7 @@
   <preference name="DisallowOverscroll" value="true"/>
   <preference name="Fullscreen" value="true" />
   <preference name="SuppressesLongPressGesture" value="true" />
-  <preference name="Orientation" value="landscape" />
+  <preference name="Orientation" value="portrait" />
+  <plugin name="cordova-plugin-file" spec="~6.0.2" />
 
 </widget>
