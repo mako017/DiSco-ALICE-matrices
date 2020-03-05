@@ -19,11 +19,13 @@
 
   <feature name="http://api.phonegap.com/1.0/device" />
 
+  <preference name="phonegap-version" value="cli-9.0.0" />
+
     <preference name="DisallowOverscroll" value="true"/>
     <preference name="Fullscreen" value="true" />
     <preference name="Orientation" value="portrait" />
     <preference name="ios-statusbarstyle" value="black-opaque" />
-    <gap:plugin name="cordova-plugin-device"/>
-    <gap:plugin name="cordova-plugin-dialogs"/>
-    <gap:plugin name="cordova-plugin-file"/>
+    <plugin name="cordova-plugin-device" spec="~2.0.3" />
+    <plugin name="cordova-plugin-dialogs" spec="~2.0.2" />
+    <plugin name="cordova-plugin-file" spec="~6.0.2" />
 </widget>
