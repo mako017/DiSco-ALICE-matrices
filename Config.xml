@@ -16,6 +16,8 @@
       Marco Koch
   </author>
 
+  <preference name="phonegap-version" value="cli-6.5.0" />
+
   <feature name="http://api.phonegap.com/1.0/device" />
 
   <preference name="permissions"                value="none"/>
