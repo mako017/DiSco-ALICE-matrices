@@ -167,13 +167,6 @@ function openLock() {
         document.getElementById("lockscreen").classList.add("hidden");
         document.getElementById("download-div").classList.remove("hidden");
         document.getElementById("download-txt").value = jtc2(getLocal());
-
-        document.getElementById("download-txt").select();
-        document.getElementById("download-txt").setSelectionRange(0, 9999999); /*For mobile devices*/
-      
-        document.execCommand("copy");
-      
-        alert("Copied the text");
     }
     else if (Participant.user.trim() === "download2") {
         // download("download.csv",jtc2(getLocal()));
