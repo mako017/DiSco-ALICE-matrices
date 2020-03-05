@@ -402,6 +402,17 @@ button:active {
     height: 7.3vh;
 }
 
+.download-div{
+    display: flex;
+    width: 80vw;
+    height: 60vh;
+    margin: auto;
+}
+
+.download-div > textarea{
+    flex: 1;
+}
+
 .hidden{
     display: none;
 }
