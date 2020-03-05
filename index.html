@@ -8,7 +8,7 @@
     <title>StavMat</title>
 </head>
 <body>
-    <div id="lockscreen" class="lockscreen">
+    <div id="lockscreen" class="lockscreen unselectable">
         <div class="center-lock">
             <p>Bitte geben Sie Ihren Teilnehmercode ein</p>
             <input id="lock-id" type="text" class="margin-center"> <br>
@@ -16,9 +16,9 @@
         </div>
     </div>
     <div id="download-div" class="download-div hidden">
-        <textarea name="" id="download-txt" cols="30" rows="10"></textarea>
+        <textarea name="" id="download-txt" style="user-select:all"></textarea>
     </div>
-    <div id="stavmat-wrap" class="stavmat-wrap hidden">
+    <div id="stavmat-wrap" class="stavmat-wrap unselectable hidden">
         <div id="stavmat-instructions" class="instructions-wrap">
             <b class="inst-titel">Beispiel für die nächsten Aufgaben</b>
             <div id="inst-page1" class="">
