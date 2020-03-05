@@ -22,7 +22,8 @@
     <preference name="DisallowOverscroll" value="true"/>
     <preference name="Fullscreen" value="true" />
     <preference name="Orientation" value="portrait" />
-    <plugin name="cordova-plugin-device"/>
-    <plugin name="cordova-plugin-dialogs"/>
-    <plugin name="cordova-plugin-file"/>
+    <preference name="ios-statusbarstyle" value="black-opaque" />
+    <gap:plugin name="cordova-plugin-device"/>
+    <gap:plugin name="cordova-plugin-dialogs"/>
+    <gap:plugin name="cordova-plugin-file"/>
 </widget>
