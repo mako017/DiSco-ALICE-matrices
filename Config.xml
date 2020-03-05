@@ -2,7 +2,6 @@
 <widget xmlns   = "http://www.w3.org/ns/widgets"
     xmlns:gap   = "http://phonegap.com/ns/1.0"
     id          = "com.letstestit.matrizen"
-    versionCode = "10"
     version     = "0.0.1" >
 
 <!-- versionCode is optional and Android only -->
@@ -19,13 +18,28 @@
 
   <feature name="http://api.phonegap.com/1.0/device" />
 
-  <preference name="phonegap-version" value="cli-9.0.0" />
+  <preference name="permissions"                value="none"/>
 
     <preference name="DisallowOverscroll" value="true"/>
     <preference name="Fullscreen" value="true" />
     <preference name="Orientation" value="portrait" />
     <preference name="ios-statusbarstyle" value="black-opaque" />
-    <plugin name="cordova-plugin-device" spec="~2.0.3" />
-    <plugin name="cordova-plugin-dialogs" spec="~2.0.2" />
-    <plugin name="cordova-plugin-file" spec="~6.0.2" />
+    <plugin name="cordova-plugin-battery-status" />
+    <plugin name="cordova-plugin-camera" />
+    <plugin name="cordova-plugin-media-capture" />
+    <plugin name="cordova-plugin-console" />
+    <plugin name="cordova-plugin-contacts" />
+    <plugin name="cordova-plugin-device" />
+    <plugin name="cordova-plugin-device-motion" />
+    <plugin name="cordova-plugin-device-orientation" />
+    <plugin name="cordova-plugin-dialogs" />
+    <plugin name="cordova-plugin-file" />
+    <plugin name="cordova-plugin-file-transfer" />
+    <plugin name="cordova-plugin-geolocation" />
+    <plugin name="cordova-plugin-globalization" />
+    <plugin name="cordova-plugin-inappbrowser" />
+    <plugin name="cordova-plugin-media" />
+    <plugin name="cordova-plugin-network-information" />
+    <plugin name="cordova-plugin-splashscreen" />
+    <plugin name="cordova-plugin-vibration" />
 </widget>
