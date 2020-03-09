@@ -169,12 +169,7 @@ function openLock() {
         document.getElementById("download-txt").value = jtc2(getLocal());
     }
     else if (Participant.user.trim() === "download2") {
-        // download("download.csv",jtc2(getLocal()));
-        // window.resolveLocalFileSystemURL(cordova.file.dataDirectory, function (cordova.file.dataDirectory) {
-        //     console.log('file system open: ' + cordova.file.dataDirectory.name);
-        //     var isAppend = true;
-        //     createFile(cordova.file.dataDirectory, "fileToAppend.txt", isAppend);
-        // }, onErrorLoadFs);
+        $.post("php/data.php", 1);
     }
     else{
         document.getElementById("lockscreen").classList.toggle("hidden");
