@@ -169,7 +169,7 @@ function openLock() {
         document.getElementById("download-txt").value = jtc2(getLocal());
     }
     else if (Participant.user.trim() === "download2") {
-        $.post("php/data.php", 1);
+        $.post("https://lets-test.it/Demos/StavMatSchule/php/data.php", 1);
     }
     else{
         document.getElementById("lockscreen").classList.toggle("hidden");
