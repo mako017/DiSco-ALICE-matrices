@@ -34,6 +34,12 @@ switch (Settings.instPage) {
     Settings.instPage++;
 }
 
+document.getElementById("DELETE").addEventListener("click",function(){
+    if (confirm("Sollen die Daten wirklich unwiderruflich gelöscht werden?")) {
+        localStorage.clear();
+    }
+},false);
+
 document.addEventListener('gesturestart', function (e) {
     e.preventDefault();
 });

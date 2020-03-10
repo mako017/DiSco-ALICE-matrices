@@ -407,6 +407,18 @@ button:active {
     width: 80vw;
     height: 60vh;
     margin: auto;
+    flex-direction: column;
+}
+
+.delete{
+    font-weight: bolder;
+    color: #f00;
+    height: 5vh;
+    font-size: 4vh;
+}
+
+.delete:hover{
+    color: #f00;
 }
 
 .download-div > textarea{

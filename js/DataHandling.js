@@ -17,10 +17,6 @@ let items = [
     "11001100101000001001,01000010001000000011,10001110001000000110,10101000011100001101,00110010001100001011,10011010001100000111,11100100110000000010,01001001100100000100"  //39     ADD     EKA     SM      DREH
 ];
 
-
-
-
-
 let Settings = {
     item : 0,
 
@@ -122,7 +118,6 @@ function getResponse() {
         sendResults();
         document.getElementById("stavmat-wrap").classList.toggle("hidden");
         document.getElementById("end").classList.toggle("hidden");
-        // alert("End of demonstration");
     }
 }
 
@@ -169,7 +164,17 @@ function openLock() {
         document.getElementById("download-txt").value = jtc2(getLocal());
     }
     else if (Participant.user.trim() === "download2") {
-        $.post("https://lets-test.it/Demos/StavMatSchule/php/data.php", 1);
+        let data = getLocal();
+        let count = 0;
+        for (const vp of data) {
+            $.post("https://lets-test.it/Demos/StavMatSchule/php/data.php", vp, function(data){
+                console.log(data);
+                if (data.includes("successfully")) {
+                    count++;
+                    document.getElementById("lock-id").value = count + " VP synced";
+                }
+            });
+        }
     }
     else{
         document.getElementById("lockscreen").classList.toggle("hidden");
