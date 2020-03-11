@@ -42,7 +42,7 @@ let Participant = {
     phpCode : 0
 }
 
-Participant.tech = Date()+";"+cordova.plugins.deviceName.name+";"+device.uuid;
+
 
 function clearOptions() {
     for (let i = 0; i < 20; i++) {
@@ -161,6 +161,9 @@ function loadItem(itemCode) {
 function openLock() {
     Participant.user = document.getElementById("lock-id").value;
     Participant.nick = document.getElementById("lock-nick").value;
+    if (typeof cordova !== "undefined") {
+        Participant.tech = Date()+";"+cordova.plugins.deviceName.name+";"+device.uuid;
+    }
     if (Participant.user.trim().toLowerCase() === "download") {
         document.getElementById("lockscreen").classList.add("hidden");
         document.getElementById("download-div").classList.remove("hidden");
@@ -261,7 +264,6 @@ function toggleCvs(id) {
 ////////////////////////////////////////////////////
 
 loadItem(items[Settings.item]);
-console.log(1);
 
 for (let i = 1; i < 21; i++) {
     document.getElementById("opt-el"+i).addEventListener("click",function(e){       
