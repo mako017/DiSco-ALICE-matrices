@@ -27,7 +27,7 @@ switch (Settings.instPage) {
         document.getElementById("stavmat-test").classList.toggle("hidden");
         resetTime();
         Settings.logTime = Date.now();
-        timelimit(1200);
+        timelimit(1080);
     default:
         break;
     }

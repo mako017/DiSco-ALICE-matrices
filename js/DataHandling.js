@@ -33,6 +33,7 @@ let Settings = {
 let Participant = {
     VPCode : getVPCode(),
     user : "",
+    nick : "",
     version : 0,
     
     response : [],
@@ -158,6 +159,7 @@ function loadItem(itemCode) {
 
 function openLock() {
     Participant.user = document.getElementById("lock-id").value;
+    Participant.nick = document.getElementById("lock-nick").value;
     if (Participant.user.trim() === "download") {
         document.getElementById("lockscreen").classList.add("hidden");
         document.getElementById("download-div").classList.remove("hidden");
