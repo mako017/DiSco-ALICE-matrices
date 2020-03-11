@@ -42,7 +42,7 @@ let Participant = {
     phpCode : 0
 }
 
-Participant.tech = Date()+";"+cordova.plugins.deviceName+";"+devicePixelRatio.uuid;
+Participant.tech = Date()+";"+cordova.plugins.deviceName.name+";"+device.uuid;
 
 function clearOptions() {
     for (let i = 0; i < 20; i++) {
@@ -261,6 +261,8 @@ function toggleCvs(id) {
 ////////////////////////////////////////////////////
 
 loadItem(items[Settings.item]);
+console.log(1);
+
 for (let i = 1; i < 21; i++) {
     document.getElementById("opt-el"+i).addEventListener("click",function(e){       
         e.target.classList.toggle("optionen-element-check");
