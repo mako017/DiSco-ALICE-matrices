@@ -34,7 +34,6 @@ let Participant = {
     VPCode : getVPCode(),
     user : "",
     nick : "",
-    version : 0,
     
     response : [],
     RT : [],
@@ -42,6 +41,8 @@ let Participant = {
 
     phpCode : 0
 }
+
+Participant.tech = Date()+";"+cordova.plugins.deviceName+";"+devicePixelRatio.uuid;
 
 function clearOptions() {
     for (let i = 0; i < 20; i++) {
@@ -160,12 +161,12 @@ function loadItem(itemCode) {
 function openLock() {
     Participant.user = document.getElementById("lock-id").value;
     Participant.nick = document.getElementById("lock-nick").value;
-    if (Participant.user.trim() === "download") {
+    if (Participant.user.trim().toLowerCase() === "download") {
         document.getElementById("lockscreen").classList.add("hidden");
         document.getElementById("download-div").classList.remove("hidden");
         document.getElementById("download-txt").value = jtc2(getLocal());
     }
-    else if (Participant.user.trim() === "download2") {
+    else if (Participant.user.trim().toLowerCase() === "upload") {
         let data = getLocal();
         let count = 0;
         for (const vp of data) {
