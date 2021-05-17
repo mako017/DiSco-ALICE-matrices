@@ -42,8 +42,8 @@ let Settings = {
 
 let Participant = {
 	VPCode: getVPCode(),
-	user: "",
-	nick: "",
+	persCode: "",
+	nickName: "",
 
 	response: [],
 	RT: [],
@@ -158,8 +158,8 @@ function loadItem(itemCode) {
 }
 
 function openLock() {
-	Participant.user = document.getElementById("lock-id").value;
-	Participant.nick = document.getElementById("lock-nick").value;
+	Participant.persCode = document.getElementById("lock-id").value;
+	Participant.nickName = document.getElementById("lock-nick").value;
 	document.getElementById("lockscreen").classList.toggle("hidden");
 	document.getElementById("stavmat-wrap").classList.toggle("hidden");
 	sendResults();
@@ -170,6 +170,10 @@ function protocol(marker) {
 	let rt = Date.now() - Settings.logTime;
 	Settings.logTime = Date.now();
 	Participant.log += marker + ":" + rt + ",";
+}
+
+function replaceAt(string, index, replace) {
+	return string.substring(0, index) + replace + string.substring(index + 1);
 }
 
 function resetTime() {
@@ -220,7 +224,10 @@ function selShape(cvs, i, fill = true) {
 }
 
 function sendResults() {
-	$.post("./php/mysql.php", encodeURI(JSON.stringify(Participant)));
+	$.post(
+		"./php/mysql.php",
+		encodeURI(JSON.stringify({ payload: Participant }))
+	);
 }
 
 function timelimit(seconds) {
