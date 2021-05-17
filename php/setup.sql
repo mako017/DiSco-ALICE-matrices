@@ -1,0 +1,2 @@
+CREATE DATABASE `matrices`CHARSET=utf8 COLLATE utf8_unicode_ci;
+CREATE TABLE `matrices`.`matrices_results` ( `counter` INT NOT NULL AUTO_INCREMENT , `VPCode` TEXT NOT NULL , `persCode` TEXT NOT NULL , `nickName` TEXT NOT NULL , `RT` LONGTEXT NOT NULL , `response` LONGTEXT NOT NULL , `log` LONGTEXT NOT NULL , PRIMARY KEY (`counter`)) ENGINE = InnoDB CHARSET=utf8 COLLATE utf8_unicode_ci;
