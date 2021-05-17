@@ -51,19 +51,6 @@ function clearOptions() {
     }
 }
 
-function download(filename, text) {
-    var element = document.createElement('a');
-    element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
-    element.setAttribute('download', filename);
-  
-    element.style.display = 'none';
-    document.body.appendChild(element);
-  
-    element.click();
-  
-    document.body.removeChild(element);
-}
-
 function fillMat(i) {
     if (Settings.constCode[Settings.constId.split("-el")[1]-1][i] === "0") {
         Settings.constCode[Settings.constId.split("-el")[1]-1] = replaceAt(Settings.constCode[Settings.constId.split("-el")[1]-1],i,'1');
@@ -78,15 +65,6 @@ function fillMat(i) {
             selShape(cvs, j);
         }
     }
-}
-
-function getLocal() {
-    let result = [];
-    let temp = localStorage;
-    for (let i = 0; i < temp.length; i++) {
-        result.push(JSON.parse(temp.getItem(temp.key(i))));
-    }
-    return result;
 }
 
 function getResponse() {
@@ -131,16 +109,6 @@ function getVPCode() {
 	return Math.random().toString(36).substr(2, 9);
 }
 
-function jtc2(json) {
-    const items = json;
-    const replacer = (key, value) => value === null ? '' : value;
-    const header = Object.keys(items[0]);
-    let csv = items.map(row => header.map(fieldName => JSON.stringify(row[fieldName], replacer)).join('\t'));
-    csv.unshift(header.join('\t'));
-    csv = csv.join('\r\n');
-    return csv;
-}
-
 function loadItem(itemCode) {
     clearOptions();
     let itemSplit = itemCode.split(",");
@@ -159,35 +127,12 @@ function loadItem(itemCode) {
 }
 
 function openLock() {
-    Participant.user = document.getElementById("lock-id").value;
-    Participant.nick = document.getElementById("lock-nick").value;
-    if (typeof cordova !== "undefined") {
-        Participant.tech = Date()+";"+cordova.plugins.deviceName.name+";"+device.uuid;
-    }
-    if (Participant.user.trim().toLowerCase() === "download") {
-        document.getElementById("lockscreen").classList.add("hidden");
-        document.getElementById("download-div").classList.remove("hidden");
-        document.getElementById("download-txt").value = jtc2(getLocal());
-    }
-    else if (Participant.user.trim().toLowerCase() === "upload") {
-        let data = getLocal();
-        let count = 0;
-        for (const vp of data) {
-            $.post("https://lets-test.it/Demos/StavMatSchule/php/data.php", vp, function(data){
-                console.log(data);
-                if (data.includes("successfully")) {
-                    count++;
-                    document.getElementById("lock-id").value = count + " VP synced";
-                }
-            });
-        }
-    }
-    else{
-        document.getElementById("lockscreen").classList.toggle("hidden");
-        document.getElementById("stavmat-wrap").classList.toggle("hidden");
-        sendResults();
-        Participant.phpCode = 1;
-    }
+	Participant.user = document.getElementById("lock-id").value;
+	Participant.nick = document.getElementById("lock-nick").value;
+	document.getElementById("lockscreen").classList.toggle("hidden");
+	document.getElementById("stavmat-wrap").classList.toggle("hidden");
+	sendResults();
+	Participant.phpCode = 1;
 }
 
 function protocol(marker) {
