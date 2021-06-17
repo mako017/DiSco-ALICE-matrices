@@ -49,3 +49,13 @@ window.addEventListener(
 	},
 	false
 );
+
+getURL();
+if (
+	Participant.persCode !== "" &&
+	Participant.persCode !== "null" &&
+	Participant.nickName !== "" &&
+	Participant.nickName !== "null"
+) {
+	document.getElementById("lock-btn").click();
+}

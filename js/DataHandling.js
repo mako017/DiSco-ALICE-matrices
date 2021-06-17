@@ -137,6 +137,16 @@ function getRT() {
 	return Date.now() - Settings.time;
 }
 
+function getURL() {
+	const urlParams = new URLSearchParams(window.location.search);
+	Participant.persCode = decodeURI(urlParams.get("persCode"));
+	Participant.nickName = decodeURI(urlParams.get("nickName"));
+	if (Participant.persCode !== "null")
+		document.getElementById("lock-id").value = Participant.persCode;
+	if (Participant.nickName !== "null")
+		document.getElementById("lock-nick").value = Participant.nickName;
+}
+
 function getVPCode() {
 	return Math.random().toString(36).substr(2, 9);
 }
