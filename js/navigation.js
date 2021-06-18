@@ -4,6 +4,16 @@ document
 	.addEventListener("click", switchInst, false);
 document.getElementById("back-btn").addEventListener("click", resetInst, false);
 document.getElementById("lock-btn").addEventListener("click", openLock, false);
+document.getElementById("jumpOff").addEventListener("click", jumpOff, false);
+
+function jumpOff() {
+	const URL =
+		"http://enterURLHere.com" +
+		`?persCode=${encodeURIComponent(
+			Participant.persCode
+		)}&nickName=${encodeURIComponent(Participant.nickName)}`;
+	window.location.href = URL;
+}
 
 function resetInst() {
 	document.getElementById("inst-page3").classList.toggle("hidden");

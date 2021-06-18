@@ -437,3 +437,8 @@ button:active {
 .hidden {
 	display: none;
 }
+
+#jumpOff {
+	display: block;
+	margin: 1rem auto;
+}
