@@ -118,6 +118,7 @@ function getResponse() {
 		];
 	}
 	protocol("send" + (Settings.item + 1));
+	sendResults();
 
 	if (Settings.item + 1 < items.length) {
 		Settings.item++;
@@ -127,7 +128,6 @@ function getResponse() {
 		resetTime();
 	} else {
 		clearInterval(Settings.intervalID);
-		sendResults();
 		document.getElementById("stavmat-wrap").classList.toggle("hidden");
 		document.getElementById("end").classList.toggle("hidden");
 	}
